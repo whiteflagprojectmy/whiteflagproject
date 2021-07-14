@@ -16,19 +16,24 @@
      <!-- font awesome-->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>White Flag Project</title>
+    
+    <!-- Vavilon.js for i18n -->
+    <script src="./static/i18n/ms.json" type="application/json" data-vavilon-dict="ms"></script>
+    <script src="./static/i18n/ta.json" type="application/json" data-vavilon-dict="ta"></script>
+    <script src="./static/i18n/zh.json" type="application/json" data-vavilon-dict="zh"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vavilon@1.0.0/dist/vavilon.min.js"></script>
 </head>
 <body>
-
-     <!-- main container -->
-        <!-- nav menu split into 2 for flex usage -->
-        <div class="nav-menu">
-            <div class="image-logo">
-                <img src="static/images/white flag logo.svg" alt="white flag project logo" />
-            </div>
-            <div class="nav-content">
-                <p>How can you help?</p>
-                <a href="https://discord.com/invite/cNaZPAEk"><img src="static/images/join_our_discord.svg" alt="Join our Discord" /></a>
-
+    <!-- main container -->
+    <!-- nav menu split into 2 for flex usage -->
+    <div class="nav-menu">
+        <div class="image-logo">
+            <img src="static/images/white flag logo.svg" alt="white flag project logo" />
+        </div>
+        <div class="nav-content">
+            <p id="demo" class="vavilon" data-vavilon="nav-help">How can you help?</p>
+            <a href="https://discord.com/invite/cNaZPAEk"><img src="static/images/join_our_discord.svg" alt="Join our Discord" /></a>
+            <button onclick="setLang('ms')">Chinese</button>
             </div>
 
         </div>
@@ -45,7 +50,7 @@
     <div class="section">
         <div class="main-content">
             <div class="text-content">
-                <h1>Who are we?</h1>
+                <h1 class="vavilon" data-vavilon="main-who-are-we">Who are we?</h1>
                 <p>The White Flag Project is a project by <a href="https://www.reddit.com/r/malaysia">r/Malaysia</a>, which aims to provide enriched data and regular updates on food banks and other resources across Malaysia, in order to help developers and NGOs help route people in need to resources which can assist them.</p>
             </div>
             <div class="text-content">
