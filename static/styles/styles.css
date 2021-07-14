@@ -1,16 +1,13 @@
 *{
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px;
     font-family: 'Signika', sans-serif;
-    background: #FFFFFF;    
-    
+    background: #FFFFFF;
 }
 
 /*header */
-.nav-menu{    
+.nav-menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,7 +24,7 @@
 /*sizing image to bottom */
 .image-logo img{
     position: relative;
-    top:50px;   
+    top:50px;
 }
 .nav-content p{
     font-weight: 300;
@@ -39,15 +36,15 @@ hr{
     position: relative;
     bottom:20px;
     width: 70%;
-    margin-left: auto;   
+    margin-left: auto;
 }
+
 .main-wrapper{
     padding-top: 50px;
     display:flex;
 }
 
 /*styling to edit text */
-
 .text-content p:first-child{
     font-weight: bold;
     font-size: 35px;
@@ -81,14 +78,11 @@ font-size: 24px;
 .anchor-content ul{
     display: flex;
     align-items: center;
-    
-
 }
 
 .anchor-content ul li{
     list-style:none;
 }
-
 
 .anchor-content ul li img{
     width: 90%;
@@ -96,4 +90,10 @@ font-size: 24px;
 
 .anchor-content ul li a:hover{
     opacity: 0.5;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        width: 768px
+    }
 }
