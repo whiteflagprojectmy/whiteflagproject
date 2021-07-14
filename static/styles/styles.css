@@ -6,6 +6,14 @@
     background: #FFFFFF;
 }
 
+.is-clickable {
+  cursor: pointer;
+}
+
+.is-hoverable:hover {
+  opacity: 0.5;
+}
+
 /*header */
 .nav-menu {
     display: flex;
@@ -18,9 +26,7 @@
     display: flex;
     align-items: center;
 }
-.nav-content a:hover{
-    opacity: 0.5;
-}
+
 /*sizing image to bottom */
 .image-logo img{
     position: relative;
@@ -29,6 +35,51 @@
 .nav-content p{
     font-weight: 300;
     font-size: 30px;
+}
+
+/*dropdown to switch language */
+.lang-dropdownbtn {
+  border: none;
+  margin: 0px;
+  padding: 0px 5px;
+}
+
+.lang-dropdownbtn p {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.dropdown-arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  margin: 0px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.lang-options {
+  display: none;
+  position: absolute;
+  margin-top: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 50px;
+}
+
+.lang-options a {
+  display: block;
+  padding: 5px 2px;
+  cursor: pointer;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/*to toggle dropdown content*/
+.show {
+  display: block;
 }
 
 /*moving hr up and to the left */
@@ -56,14 +107,9 @@ h1 {
     letter-spacing: 0.05em;
 }
 
-/*styling to adjust google excel sheet call to action part */
-
-.link-to-access a:hover{
-    opacity: 0.5;
-}
 /*styling to adjust anchor content */
-.anchor-content{
-    padding-top: 40px;
+.anchor-content {
+  padding-top: 40px;
 }
 
 .anchor-content p{

@@ -18,9 +18,21 @@
     <title>White Flag Project</title>
     
     <!-- Vavilon.js for i18n -->
-    <script src="./static/i18n/ms.json" type="application/json" data-vavilon-dict="ms"></script>
-    <script src="./static/i18n/ta.json" type="application/json" data-vavilon-dict="ta"></script>
-    <script src="./static/i18n/zh.json" type="application/json" data-vavilon-dict="zh"></script>
+    <script
+      src="static/i18n/ms.json"
+      type="application/json"
+      data-vavilon-dict="ms"
+    ></script>
+    <script
+      src="static/i18n/ta.json"
+      type="application/json"
+      data-vavilon-dict="ta"
+    ></script>
+    <script
+      src="static/i18n/zh.json"
+      type="application/json"
+      data-vavilon-dict="zh"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/vavilon@1.0.0/dist/vavilon.min.js"></script>
 </head>
 <body>
@@ -31,11 +43,46 @@
             <img src="static/images/white flag logo.svg" alt="white flag project logo" />
         </div>
         <div class="nav-content">
-            <p id="demo" class="vavilon" data-vavilon="nav-help">How can you help?</p>
-            <a href="https://discord.com/invite/cNaZPAEk"><img src="static/images/join_our_discord.svg" alt="Join our Discord" /></a>
-            <button onclick="setLang('ms')">Chinese</button>
-            </div>
+        <p class="vavilon" data-vavilon="nav-help">How can you help?</p>
+        <a href="https://discord.com/invite/cNaZPAEk"
+          ><img src="static/images/join_our_discord.svg" alt="Join our Discord"
+        /></a>
 
+        <!-- to enable language switching -->
+        <script>
+          function toggleDropdown() {
+            document
+              .getElementById("dropdown-content")
+              .classList.toggle("show");
+          }
+
+          window.onclick = function (event) {
+            if (!event.target.parentElement.matches(".lang-dropdownbtn")) {
+              var dropdown = document.getElementById("dropdown-content");
+              if (dropdown.classList.contains("show")) {
+                dropdown.classList.remove("show");
+              }
+            } else {
+            }
+          };
+        </script>
+
+        <div class="lang-dropdown">
+          <button
+            class="lang-dropdownbtn is-hoverable is-clickable"
+            onclick="toggleDropdown()"
+          >
+            <p class="vavilon" data-vavilon="current-language">English</p>
+            <i class="dropdown-arrow"> </i>
+          </button>
+          <div id="dropdown-content" class="lang-options">
+            <a onclick="setLang('en')">English</a>
+            <a onclick="setLang('ms')">Malay</a>
+            <a onclick="setLang('zh')">Mandarin</a>
+            <a onclick="setLang('ta')">Tamil</a>
+          </div>
+        </div>
+      </div>
         </div>
         <hr />
 
@@ -50,21 +97,38 @@
     <div class="section">
         <div class="main-content">
             <div class="text-content">
-                <h1 class="vavilon" data-vavilon="main-who-are-we">Who are we?</h1>
-                <p>The White Flag Project is a project by <a href="https://www.reddit.com/r/malaysia">r/Malaysia</a>, which aims to provide enriched data and regular updates on food banks and other resources across Malaysia, in order to help developers and NGOs help route people in need to resources which can assist them.</p>
-            </div>
-            <div class="text-content">
-                <h1> Data available in the following formats:</h1>
-            </div>
-            <div class="link-to-access">
-                <a href="https://airtable.com/shryeS5cgHn8rScDn"><img src="static/images/airtable.svg" alt="Access data (AirTable)" /></a>
-            </div>
-            <div class="link-to-access">
-                <a href="static/data/foodbanks.json"><img src="static/images/json.svg" alt="Access data (JSON)" /></a>
-            </div>
-            <div class="ccAttribution">
-                <img src="static/images/CC_attribute.svg" alt="Creative Commons Attribution" id="img-cc" />
-            </div>
+            <h1>Who are we?</h1>
+            <p>
+              The White Flag Project is a project by
+              <a href="https://www.reddit.com/r/malaysia">r/Malaysia</a>, which
+              aims to provide enriched data and regular updates on food banks
+              and other resources across Malaysia, in order to help developers
+              and NGOs help route people in need to resources which can assist
+              them.
+            </p>
+          </div>
+          <div class="text-content">
+            <h1>Data available in the following formats:</h1>
+          </div>
+          <div class="link-to-access is-hoverable">
+            <a href="https://airtable.com/shryeS5cgHn8rScDn"
+              ><img
+                src="static/images/airtable.svg"
+                alt="Access data (AirTable)"
+            /></a>
+          </div>
+          <div class="link-to-access is-hoverable">
+            <a href="static/data/foodbanks.json"
+              ><img src="static/images/json.svg" alt="Access data (JSON)"
+            /></a>
+          </div>
+          <div class="ccAttribution">
+            <img
+              src="static/images/CC_attribute.svg"
+              alt="Creative Commons Attribution"
+              id="img-cc"
+            />
+          </div>
         </div>
 
         </div>
