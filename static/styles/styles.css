@@ -93,7 +93,13 @@ font-size: 24px;
     display: none
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    hr {
+        width: 60%
+    }
+}
+
+@media (max-width: 800px) {
     *{
         margin: 0 5px
     }
