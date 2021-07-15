@@ -48,6 +48,7 @@ hr{
 h1 {
     font-weight: bold;
     font-size: 35px;
+    margin: 15px 9px; /* add some white space between title and others */
 }
 
 .text-content p {
@@ -93,6 +94,19 @@ font-size: 24px;
     display: none
 }
 
+.ccAttribution {
+    margin-left: 12px; /* align with button links */
+}
+
+.section {
+    margin-top: -35px; /* shrink top spacing for desktop */
+}
+
+.link-to-access {
+    margin: 0 /* align button to titles */
+}
+
+/* mobile specific CSS */
 @media (max-width: 768px) {
     *{
         margin: 0 5px
@@ -111,7 +125,7 @@ font-size: 24px;
     }
 
     .main-wrapper {
-        margin: 30px;
+        margin: 15px; /* slightly less margin */
         display: flex;
         max-width: 768px;
         flex-direction: column;
@@ -131,6 +145,57 @@ font-size: 24px;
 
     /* Is there a better way to do this? */
     .headerImage {
-        width: 110%;
+        max-width: 325px
+        padding: 0 20px; 
+        background: transparent; /* don't block image-logo */
+    }
+
+    .aside {
+        margin-top: -50px; /* make aside appear beside image-logo */
+        margin-left: 60px;
+        z-index: 9; /* don't get hidden behind image-logo */
+        background: transparent; /* don't block image-logo */
+    }
+
+    .section {
+        margin-top: 42px; /* add some white space to top of section */
+    }
+
+    /* adjust text size for mobile */
+    h1 {
+        font-size: 25px;
+        margin: 15px 0;
+    }
+
+    .text-content p {
+        font-size: 13px;
+        text-align: left;
+        line-height: 23px;
+    }
+
+    .mobile_discord {
+        margin-left: -5px;
+    }
+
+    .link-to-access > a, .mobile_discord > a {
+        display: block;
+        width: 215px; /* for mobile, it's better to fix the width */
+        margin: 0; /* removed margin to align buttons */
+    }
+    .link-to-access > a > img, .mobile_discord > a > img {
+        width: 215px; /* for mobile, it's better to fix the width */
+    }
+
+    .ccAttribution {
+        margin-top: 5px; /* slight top spacing for CC image */
+        margin-left: 0;
+    }
+
+}
+
+/* tablet specific CSS */
+@media (min-width: 600px) and (max-width: 768px) {
+    .mobile_discord {
+        margin-left: -20px;
     }
 }
