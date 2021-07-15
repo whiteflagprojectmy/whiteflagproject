@@ -145,7 +145,7 @@ font-size: 24px;
 
     /* Is there a better way to do this? */
     .headerImage {
-        max-width: 325px
+        max-width: 325px;
         padding: 0 20px; 
         background: transparent; /* don't block image-logo */
     }
