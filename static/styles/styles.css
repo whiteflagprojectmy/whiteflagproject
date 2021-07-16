@@ -194,6 +194,12 @@ font-size: 24px;
         margin-top: 5px; /* slight top spacing for CC image */
         margin-left: 0;
     }
+
+    .anchor-content ul {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        flex-direction: column;
+    }
 }
 
 /* tablet specific CSS */
