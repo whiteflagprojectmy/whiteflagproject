@@ -137,10 +137,6 @@ font-size: 24px;
     width: 90%;
 }
 
-.anchor-content ul li a:hover{
-    opacity: 0.5;
-}
-
 .mobile_discord {
     display: none
 }

@@ -45,7 +45,7 @@
         <div class="nav-content">
         <p class="vavilon" data-vavilon="nav-help">How can you help?</p>
         <a href="https://discord.com/invite/cNaZPAEk"
-          ><img src="static/images/join_our_discord.svg" alt="Join our Discord"
+          ><img class="text-button" src="static/images/join_our_discord/join_our_discord_en.svg" alt="Join our Discord"
         /></a>
 
         <!-- to enable language switching -->
@@ -65,6 +65,18 @@
             } else {
             }
           };
+
+          function onChangeLanguage(language) {
+            setLang(language);
+
+            // replaces buttons with corresponding language
+            const buttons = document.getElementsByClassName("text-button"); 
+            for (let button of buttons) {
+              const old_src = button.src;
+              // this feels very hacky lol feel free to edit
+              button.src = old_src.slice(0, -6) + language + ".svg";
+            }
+          }
         </script>
 
         <div class="lang-dropdown">
@@ -76,9 +88,9 @@
             <i class="dropdown-arrow"> </i>
           </button>
           <div id="dropdown-content" class="lang-options">
-            <a onclick="setLang('en')">English</a>
-            <a onclick="setLang('ms')">Bahasa Malaysia</a>
-            <a onclick="setLang('zh')">中文</a>
+            <a onclick="onChangeLanguage('en')">English</a>
+            <a onclick="onChangeLanguage('ms')">Bahasa Malaysia</a>
+            <a onclick="onChangeLanguage('zh')">中文</a>
             <!-- commented out until tamil translation is available -->
             <!-- <a onclick="setLang('ta')">தமிழ்</a> -->
           </div>
@@ -112,7 +124,7 @@
                 NGOs help route people in need to resources which can assist them.
               </p>
             </div>
-            
+
           </div>
           <div class="text-content">
             <h1 class="vavilon" data-vavilon="main-data-heading">Data available in the following formats:</h1>
@@ -129,30 +141,23 @@
               ><img src="static/images/json.svg" alt="Access data (JSON)"
             /></a>
           </div>
-          <div class="ccAttribution">
-            <img
-              src="static/images/CC_attribute.svg"
-              alt="Creative Commons Attribution"
-              id="img-cc"
-            />
-          </div>
         </div>
 
 
 
 
         <div class="anchor-content">
-            <p>Our data is currently being used in these apps</p>
+            <p class="vavilon" data-vavilon="anchor-heading">Our data is currently being used in these apps</p>
             <ul>
                 <!--            <li><a href="https://www.kitajaga.co"><img src="static/images/kita_jaga_kita.svg" alt="kita jaga kita link"></a></li>-->
-                <li><a href="https://www.sambalsos.com"><img src="static/images/Sambal SOS.svg" alt="sambal SOS link"></a></li>
-                <li><a href="#"><img src="static/images/more to come mini.svg"></a></li>
+                <li class="is-hoverable"><a href="https://www.sambalsos.com"><img src="static/images/Sambal SOS.svg" alt="sambal SOS link"></a></li>
+                <li><a href="#"><img class="text-button" src="static/images/more_to_come/more_to_come_en.svg"></a></li>
             </ul>
 
         </div>
 
         <div class="mobile_discord">
-            <a href="https://discord.com/invite/cNaZPAEk"><img src="static/images/join_our_discord.svg" alt="Join our Discord" /></a>
+            <a href="https://discord.com/invite/cNaZPAEk"><img class="text-button" src="static/images/join_our_discord/join_our_discord_en.svg" alt="Join our Discord" /></a>
         </div>
 
         <div class="ccAttribution">
