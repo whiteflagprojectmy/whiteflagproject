@@ -106,6 +106,11 @@ font-size: 24px;
     margin: 0 /* align button to titles */
 }
 
+.ccAttribution {
+    margin-top: 2%;
+    text-align: center;
+}
+
 /* mobile specific CSS */
 @media (max-width: 768px) {
     *{
@@ -117,11 +122,10 @@ font-size: 24px;
     }
 
     .mobile_discord {
-        padding-top: 30px;
-        margin-bottom: 0px;
-        padding-bottom: 0px;
-        width: 90%;
-        display: block;
+        padding-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .main-wrapper {
@@ -146,7 +150,7 @@ font-size: 24px;
     /* Is there a better way to do this? */
     .headerImage {
         max-width: 325px;
-        padding: 0 20px; 
+        padding: 0 20px;
         background: transparent; /* don't block image-logo */
     }
 
@@ -190,12 +194,24 @@ font-size: 24px;
         margin-top: 5px; /* slight top spacing for CC image */
         margin-left: 0;
     }
-
 }
 
 /* tablet specific CSS */
 @media (min-width: 600px) and (max-width: 768px) {
     .mobile_discord {
         margin-left: -20px;
+    }
+}
+
+@media (max-width:600px) {
+    .link-to-access {
+        max-width: 600px;
+        display:flex;
+        justify-content: center;
+    }
+
+    .link-to-access img {
+        position: relative;
+        left: -2%;
     }
 }
