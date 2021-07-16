@@ -79,7 +79,8 @@
             <a onclick="setLang('en')">English</a>
             <a onclick="setLang('ms')">Bahasa Malaysia</a>
             <a onclick="setLang('zh')">中文</a>
-            <a onclick="setLang('ta')">தமிழ்</a>
+            <!-- commented out until tamil translation is available -->
+            <!-- <a onclick="setLang('ta')">தமிழ்</a> -->
           </div>
         </div>
       </div>
@@ -97,18 +98,24 @@
     <div class="section">
         <div class="main-content">
             <div class="text-content">
-            <h1>Who are we?</h1>
-            <p>
-              The White Flag Project is a project by
-              <a href="https://www.reddit.com/r/malaysia">r/Malaysia</a>, which
-              aims to provide enriched data and regular updates on food banks
-              and other resources across Malaysia, in order to help developers
-              and NGOs help route people in need to resources which can assist
-              them.
-            </p>
+            <h1 class="vavilon" data-vavilon="main-about-heading">Who are we?</h1>
+
+            <!-- this is a hack to keep the r/malaysia link working when the site switches language -->
+            <div class="about-content">
+              <p class="vavilon" data-vavilon="main-about-content-1">
+                The White Flag Project is a project by
+              </p>
+              <p><a href="https://www.reddit.com/r/malaysia">r/Malaysia</a></p>
+              <p class="vavilon" data-vavilon="main-about-content-2">
+                , which aims to provide enriched data and regular updates on food banks
+                and other resources across Malaysia, in order to help developers and 
+                NGOs help route people in need to resources which can assist them.
+              </p>
+            </div>
+            
           </div>
           <div class="text-content">
-            <h1>Data available in the following formats:</h1>
+            <h1 class="vavilon" data-vavilon="main-data-heading">Data available in the following formats:</h1>
           </div>
           <div class="link-to-access is-hoverable">
             <a href="https://airtable.com/shryeS5cgHn8rScDn"

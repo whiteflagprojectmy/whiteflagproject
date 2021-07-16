@@ -107,6 +107,11 @@ h1 {
     letter-spacing: 0.05em;
 }
 
+.about-content p {
+    display: inline;
+    margin: 0px;
+}
+
 /*styling to adjust anchor content */
 .anchor-content {
   padding-top: 40px;
