@@ -16,21 +16,86 @@
      <!-- font awesome-->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>White Flag Project</title>
+    
+    <!-- Vavilon.js for i18n -->
+    <script
+      src="static/i18n/ms.json"
+      type="application/json"
+      data-vavilon-dict="ms"
+    ></script>
+    <script
+      src="static/i18n/ta.json"
+      type="application/json"
+      data-vavilon-dict="ta"
+    ></script>
+    <script
+      src="static/i18n/zh.json"
+      type="application/json"
+      data-vavilon-dict="zh"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vavilon@1.0.0/dist/vavilon.min.js"></script>
 </head>
 <body>
+    <!-- main container -->
+    <!-- nav menu split into 2 for flex usage -->
+    <div class="nav-menu">
+        <div class="image-logo">
+            <img src="static/images/white flag logo.svg" alt="white flag project logo" />
+        </div>
+        <div class="nav-content">
+        <p class="vavilon" data-vavilon="nav-help">How can you help?</p>
+        <a href="https://discord.com/invite/cNaZPAEk"
+          ><img class="text-button" src="static/images/join_our_discord/join_our_discord_en.svg" alt="Join our Discord"
+        /></a>
 
-     <!-- main container -->
-        <!-- nav menu split into 2 for flex usage -->
-        <div class="nav-menu">
-            <div class="image-logo">
-                <img src="static/images/white flag logo.svg" alt="white flag project logo" />
-            </div>
-            <div class="nav-content">
-                <p>How can you help?</p>
-                <a href="https://discord.com/invite/cNaZPAEk"><img src="static/images/join_our_discord.svg" alt="Join our Discord" /></a>
+        <!-- to enable language switching -->
+        <script>
+          function toggleDropdown() {
+            document
+              .getElementById("dropdown-content")
+              .classList.toggle("show");
+          }
 
-            </div>
+          window.onclick = function (event) {
+            if (!event.target.parentElement.matches(".lang-dropdownbtn")) {
+              var dropdown = document.getElementById("dropdown-content");
+              if (dropdown.classList.contains("show")) {
+                dropdown.classList.remove("show");
+              }
+            } else {
+            }
+          };
 
+          function onChangeLanguage(language) {
+            setLang(language);
+
+            // replaces buttons with corresponding language
+            const buttons = document.getElementsByClassName("text-button"); 
+            for (let button of buttons) {
+              const old_src = button.src;
+              // this feels very hacky lol feel free to edit
+              button.src = old_src.slice(0, -6) + language + ".svg";
+            }
+          }
+        </script>
+
+        <div class="lang-dropdown">
+          <button
+            class="lang-dropdownbtn is-hoverable is-clickable"
+            onclick="toggleDropdown()"
+          >
+            <p class="vavilon" data-vavilon="current-language">English</p>
+            <i class="dropdown-arrow"> </i>
+          </button>
+          <div id="dropdown-content" class="lang-options">
+            <a onclick="onChangeLanguage('en')">English</a>
+            <a onclick="onChangeLanguage('ms')">Bahasa Malaysia</a>
+            <a onclick="onChangeLanguage('zh')">中文</a>
+            <!-- commented out until tamil translation is available -->
+            <!-- <a onclick="setLang('ta')">தமிழ்</a> -->
+          </div>
+        </div>
+      </div>
         </div>
         <hr />
 
@@ -45,38 +110,58 @@
     <div class="section">
         <div class="main-content">
             <div class="text-content">
-                <h1>Who are we?</h1>
-                <p>The White Flag Project is a project by <a href="https://www.reddit.com/r/malaysia">r/Malaysia</a>, which aims to provide enriched data and regular updates on food banks and other resources across Malaysia, in order to help developers and NGOs help route people in need to resources which can assist them.</p>
-            </div>
-            <div class="text-content">
-                <h1> Data available in the following formats:</h1>
-            </div>
-            <div class="link-to-access">
-                <a href="https://airtable.com/shrW3IGsNO74zjKVr"><img src="static/images/airtable.svg" alt="Access data (AirTable)" /></a>
-            </div>
-            <div class="link-to-access">
-                <a href="https://whiteflagproject.s3.ap-southeast-1.amazonaws.com/rWhiteFlagProject.json"><img src="static/images/json.svg" alt="Access data (JSON)" /></a>
+            <h1 class="vavilon" data-vavilon="main-about-heading">Who are we?</h1>
+
+            <!-- this is a hack to keep the r/malaysia link working when the site switches language -->
+            <div class="about-content">
+              <p class="vavilon" data-vavilon="main-about-content-1">
+                The White Flag Project is a project by
+              </p>
+              <p><a href="https://www.reddit.com/r/malaysia">r/Malaysia</a></p>
+              <p class="vavilon" data-vavilon="main-about-content-2">
+                , which aims to provide enriched data and regular updates on food banks
+                and other resources across Malaysia, in order to help developers and 
+                NGOs help route people in need to resources which can assist them.
+              </p>
             </div>
 
+          </div>
+          <div class="text-content">
+            <h1 class="vavilon" data-vavilon="main-data-heading">Data available in the following formats:</h1>
+          </div>
+          <div class="link-to-access is-hoverable">
+            <a href="https://airtable.com/shrW3IGsNO74zjKVr"
+              ><img
+                src="static/images/airtable.svg"
+                alt="Access data (AirTable)"
+            /></a>
+          </div>
+          <div class="link-to-access is-hoverable">
+            <a href="https://whiteflagproject.s3.ap-southeast-1.amazonaws.com/rWhiteFlagProject.json"
+              ><img src="static/images/json.svg" alt="Access data (JSON)"
+            /></a>
+          </div>
         </div>
 
 
 
 
         <div class="anchor-content">
-            <p>Our data is currently being used in these apps</p>
+            <p class="vavilon" data-vavilon="anchor-heading">Our data is currently being used in these apps</p>
             <ul>
                 <!--            <li><a href="https://www.kitajaga.co"><img src="static/images/kita_jaga_kita.svg" alt="kita jaga kita link"></a></li>-->
-                <li><a href="https://www.sambalsos.com"><img src="static/images/data_consumers_logo/Sambal SOS.svg" alt="sambal SOS link"></a></li>
-                <li><a href="https://foodbank-my.com"><img src="static/images/data_consumers_logo/foodbank-my.png" alt="foodbank-MY link"></a></li>
-                <li><a href="https://www.kitaboleh.my"><img src="static/images/data_consumers_logo/kitaboleh.png"></a></li>
-                <li><a href="#"><img src="static/images/more to come mini.svg"></a></li>
+                <li class="is-hoverable"><a href="https://www.sambalsos.com"><img src="static/images/Sambal SOS.svg" alt="sambal SOS link"></a></li>
+                <li><a href="#"><img class="text-button" src="static/images/more_to_come/more_to_come_en.svg"></a></li>
+                <li class="is-hoverable"><a href="https://www.sambalsos.com"><img src="static/images/data_consumers_logo/Sambal SOS.svg" alt="sambal SOS link"></a></li>
+                <li class="is-hoverable"><a href="https://foodbank-my.com"><img src="static/images/data_consumers_logo/foodbank-my.png" alt="foodbank-MY link"></a></li>
+                <li class="is-hoverable"><a href="https://www.kitaboleh.my"><img src="static/images/data_consumers_logo/kitaboleh.png"></a></li>
+                <li><a href="#"><img src="static/images/more_to_come/more_to_come_en.svg""></a></li>
             </ul>
 
         </div>
 
         <div class="mobile_discord">
-            <a href="https://discord.com/invite/cNaZPAEk"><img src="static/images/join_our_discord.svg" alt="Join our Discord" /></a>
+            <a href="https://discord.com/invite/cNaZPAEk"><img class="text-button" src="static/images/join_our_discord/join_our_discord_en.svg" alt="Join our Discord" /></a>
         </div>
 
         <div class="ccAttribution">
