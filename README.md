@@ -1,7 +1,7 @@
 [![Project Logo](https://i.imgur.com/RIRNCGd.png)](https://www.whiteflagproject.co)
 
 [Project website](https://www.whiteflagproject.co)
-[![Airtable sheet](static/images/airtable.svg)](https://airtable.com/shryeS5cgHn8rScDn) [![Discord server](static/images/join_our_discord.svg)](https://discord.gg/9UhCfGqf)
+[![Airtable sheet](static/images/airtable.svg)](https://airtable.com/shryeS5cgHn8rScDn) [![Discord server](static/images/join_our_discord/join_our_discord_en.svg)](https://discord.gg/9UhCfGqf)
 
 # White Flag Project by /r/Malaysia 🇲🇾 🏳️
 This is the official repository for the [White Flag Project by /r/malaysia](https://www.reddit.com/r/malaysia/comments/oir4za/rmalaysias_white_flag_project_your_help_needed_on/) website.
