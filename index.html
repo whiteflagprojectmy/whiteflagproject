@@ -43,61 +43,63 @@
             <img src="static/images/white flag logo.svg" alt="white flag project logo" />
         </div>
         <div class="nav-content">
-        <p class="vavilon" data-vavilon="nav-help">How can you help?</p>
-        <a href="https://discord.com/invite/cNaZPAEk"
-          ><img class="text-button" src="static/images/join_our_discord/join_our_discord_en.svg" alt="Join our Discord"
-        /></a>
+            <p class="vavilon" data-vavilon="nav-help">How can you help?</p>
+            <a href="https://discord.com/invite/cNaZPAEk"
+            ><img class="translatable-img" src="static/images/join_our_discord/join_our_discord_en.svg" alt="Join our Discord"
+            /></a>
 
-        <!-- to enable language switching -->
-        <script>
-          function toggleDropdown() {
-            document
-              .getElementById("dropdown-content")
-              .classList.toggle("show");
-          }
-
-          window.onclick = function (event) {
-            if (!event.target.parentElement.matches(".lang-dropdownbtn")) {
-              var dropdown = document.getElementById("dropdown-content");
-              if (dropdown.classList.contains("show")) {
-                dropdown.classList.remove("show");
-              }
-            } else {
+            <!-- to enable language switching -->
+            <script>
+            function toggleDropdown() {
+                const dropdowns = document.getElementsByClassName("dropdown-content");
+                for (let dropdown of dropdowns) {
+                    dropdown.classList.toggle("show");
+                }
             }
-          };
 
-          function onChangeLanguage(language) {
-            setLang(language);
+            window.onclick = function (event) {
+                if (!event.target.parentElement.matches(".lang-dropdownbtn")) {
+                    const dropdowns = document.getElementsByClassName("dropdown-content");
+                    for (let dropdown of dropdowns) {
+                        if (dropdown.classList.contains("show")) {
+                            dropdown.classList.remove("show");
+                        }
+                    }
+                }
+            };
 
-            // replaces buttons with corresponding language
-            const buttons = document.getElementsByClassName("text-button"); 
-            for (let button of buttons) {
-              const old_src = button.src;
-              // this feels very hacky lol feel free to edit
-              button.src = old_src.slice(0, -6) + language + ".svg";
+            function onChangeLanguage(language) {
+                setLang(language);
+
+                // replaces buttons with corresponding language
+                const buttons = document.getElementsByClassName("translatable-img"); 
+                for (let button of buttons) {
+                    const old_src = button.src;
+                    // this feels very hacky lol feel free to edit
+                    button.src = old_src.slice(0, -6) + language + ".svg";
+                }
             }
-          }
-        </script>
+            </script>
 
-        <div class="lang-dropdown">
-          <button
-            class="lang-dropdownbtn is-hoverable is-clickable"
-            onclick="toggleDropdown()"
-          >
-            <p class="vavilon" data-vavilon="current-language">English</p>
-            <i class="dropdown-arrow"> </i>
-          </button>
-          <div id="dropdown-content" class="lang-options">
-            <a onclick="onChangeLanguage('en')">English</a>
-            <a onclick="onChangeLanguage('ms')">Bahasa Malaysia</a>
-            <a onclick="onChangeLanguage('zh')">中文</a>
-            <!-- commented out until tamil translation is available -->
-            <!-- <a onclick="setLang('ta')">தமிழ்</a> -->
-          </div>
+            <div class="lang-dropdown">
+                <button
+                    class="lang-dropdownbtn is-hoverable is-clickable"
+                    onclick="toggleDropdown()"
+                >
+                    <p class="vavilon" data-vavilon="current-language">English</p>
+                    <i class="dropdown-arrow"> </i>
+                </button>
+                <div class="lang-options dropdown-content">
+                    <a onclick="onChangeLanguage('en')">English</a>
+                    <a onclick="onChangeLanguage('ms')">Bahasa Malaysia</a>
+                    <a onclick="onChangeLanguage('zh')">中文</a>
+                    <!-- commented out until tamil translation is available -->
+                    <!-- <a onclick="setLang('ta')">தமிழ்</a> -->
+                </div>
+            </div>
         </div>
-      </div>
-        </div>
-        <hr />
+    </div>
+    <hr />
 
 <div class="main-wrapper">
     <!-- aside and section created to split image and text -->
@@ -149,19 +151,32 @@
         <div class="anchor-content">
             <p class="vavilon" data-vavilon="anchor-heading">Our data is currently being used in these apps</p>
             <ul>
-                <!--            <li><a href="https://www.kitajaga.co"><img src="static/images/kita_jaga_kita.svg" alt="kita jaga kita link"></a></li>-->
-                <li class="is-hoverable"><a href="https://www.sambalsos.com"><img src="static/images/Sambal SOS.svg" alt="sambal SOS link"></a></li>
-                <li><a href="#"><img class="text-button" src="static/images/more_to_come/more_to_come_en.svg"></a></li>
                 <li class="is-hoverable"><a href="https://www.sambalsos.com"><img src="static/images/data_consumers_logo/Sambal SOS.svg" alt="sambal SOS link"></a></li>
                 <li class="is-hoverable"><a href="https://foodbank-my.com"><img src="static/images/data_consumers_logo/foodbank-my.png" alt="foodbank-MY link"></a></li>
                 <li class="is-hoverable"><a href="https://www.kitaboleh.my"><img src="static/images/data_consumers_logo/kitaboleh.png"></a></li>
-                <li><a href="#"><img src="static/images/more_to_come/more_to_come_en.svg""></a></li>
+                <li><a href="#"><img class="translatable-img" src="static/images/more_to_come/more_to_come_en.svg""></a></li>
             </ul>
 
         </div>
 
         <div class="mobile_discord">
-            <a href="https://discord.com/invite/cNaZPAEk"><img class="text-button" src="static/images/join_our_discord/join_our_discord_en.svg" alt="Join our Discord" /></a>
+            <a href="https://discord.com/invite/cNaZPAEk"><img class="translatable-img" src="static/images/join_our_discord/join_our_discord_en.svg" alt="Join our Discord" /></a>
+            <div class="lang-dropdown">
+                <button
+                    class="lang-dropdownbtn is-hoverable is-clickable"
+                    onclick="toggleDropdown()"
+                >
+                    <p class="vavilon" data-vavilon="current-language">English</p>
+                    <i class="dropdown-arrow"> </i>
+                </button>
+                <div class="lang-options dropdown-content">
+                    <a onclick="onChangeLanguage('en')">English</a>
+                    <a onclick="onChangeLanguage('ms')">Bahasa Malaysia</a>
+                    <a onclick="onChangeLanguage('zh')">中文</a>
+                    <!-- commented out until tamil translation is available -->
+                    <!-- <a onclick="setLang('ta')">தமிழ்</a> -->
+                </div>
+            </div>
         </div>
 
         <div class="ccAttribution">
