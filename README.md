@@ -1,10 +1,8 @@
+[![Project Logo](https://i.imgur.com/RIRNCGd.png)](https://www.whiteflagproject.co)
+
 [Project website](https://www.whiteflagproject.co)
+[![Airtable sheet](static/images/airtable.svg)](https://airtable.com/shryeS5cgHn8rScDn) [![Discord server](static/images/join_our_discord.svg)](https://discord.gg/9UhCfGqf)
 
-[Airtable sheet](https://airtable.com/shryeS5cgHn8rScDn)
-
-[Discord server](https://discord.com/invite/cNaZPAEk)
-
-![Project Logo](static/images/white flag logo.svg)
 # White Flag Project by /r/Malaysia 🇲🇾 🏳️
 This is the official repository for the [White Flag Project by /r/malaysia](https://www.reddit.com/r/malaysia/comments/oir4za/rmalaysias_white_flag_project_your_help_needed_on/) website.
 # About the project
@@ -20,4 +18,4 @@ Currently, we have a static website to act as our online identity, and as a plac
 Please visit our Project board if you would like to know what we are doing next.
 
 # Contributing
-We welcome people of all skill levels who are willing to contribute to our project. Please consider joining our [Discord server](https://discord.com/invite/cNaZPAEk) if you would like to know how you can help.
+We welcome people of all skill levels who are willing to contribute to our project. Please consider joining our [Discord server](https://discord.gg/9UhCfGqf) if you would like to know how you can help.
