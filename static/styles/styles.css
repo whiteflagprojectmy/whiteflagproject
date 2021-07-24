@@ -125,16 +125,20 @@ font-size: 24px;
 }
 
 .anchor-content ul{
-    display: flex;
+    display: grid;
     align-items: center;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .anchor-content ul li{
-    list-style:none;
+    list-style: none;
+
 }
 
 .anchor-content ul li img{
     width: 90%;
+    max-height: 50px;
+    width: auto;
 }
 
 .mobile_discord {
@@ -255,7 +259,12 @@ font-size: 24px;
     .anchor-content ul {
         padding-top: 10px;
         padding-bottom: 20px;
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .anchor-content li img {
+        max-height: 30px;
     }
 }
 
