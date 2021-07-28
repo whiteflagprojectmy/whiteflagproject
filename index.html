@@ -1,62 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>White Flag Project</title>
+  <meta
+    name="description"
+    content="This is the homepage for The White Flag Project, which aims to
+    provide enriched data and regular updates on food banks and other resources
+    across Malaysia.">
 
-    <!-- link to main css page -->
-    <link href = "static/styles/styles.css" rel="stylesheet" >
+  <link rel="icon" href="favicon.ico">
 
-    <!-- Google fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!--Open Graph metadata-->
+  <meta property="og:title" content="Homepage - White Flag Project">
+  <meta
+    property="og:description"
+    content="This is the homepage for The White Flag Project, which aims to
+    provide enriched data and regular updates on food banks and other resources
+    across Malaysia.">
+  <meta property="og:image" content="static/images/white flag logo.svg">
+  <meta property="og:type" content="website">
 
-    <!-- font awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>White Flag Project</title>
+  <!-- link to main css page -->
+  <link href = "static/styles/styles.css" rel="stylesheet" >
+  
+  <!-- Google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600;700&display=swap" rel="stylesheet"> -->
+  <!-- https://web.dev/defer-non-critical-css/ -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600;700&display=swap"></noscript>
 
-    <!-- Vavilon.js for i18n -->
-    <script
-      src="static/i18n/ms.json"
-      type="application/json"
-      data-vavilon-dict="ms"
+  <!-- font awesome-->
+  <!-- Not being used for now -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" defer/> -->
+
+  <!-- Vavilon.js for i18n -->
+  <script
+    src="static/i18n/ms.json"
+    type="application/json"
+    data-vavilon-dict="ms"
+    async
     ></script>
-    <script
-      src="static/i18n/ta.json"
-      type="application/json"
-      data-vavilon-dict="ta"
+  <script
+    src="static/i18n/ta.json"
+    type="application/json"
+    data-vavilon-dict="ta"
+    async
     ></script>
-    <script
-      src="static/i18n/zh.json"
-      type="application/json"
-      data-vavilon-dict="zh"
+  <script
+    src="static/i18n/zh.json"
+    type="application/json"
+    data-vavilon-dict="zh"
+    async
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/vavilon@1.0.0/dist/vavilon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vavilon@1.0.0/dist/vavilon.min.js"></script>
+  <script src="static/js/change_lang.js" async></script>
 </head>
+
 <body>
-    <!-- main container -->
-    <!-- nav menu split into 2 for flex usage -->
-    <div class="nav-menu">
-        <div class="image-logo">
-            <img src="static/images/white flag logo.svg" alt="white flag project logo" />
-        </div>
-        <div class="nav-content">
-            <p class="vavilon" data-vavilon="nav-help">How can you help?</p>
-            <a href="https://discord.gg/ZYbMchDbqU"
-            ><img class="translatable-img" src="static/images/join_our_discord/join_our_discord_en.svg" alt="Join our Discord"
-            /></a>
+  <!-- nav menu split into 2 for flex usage -->
+  <nav class="top-nav">
+    <img class="image-logo" src="static/images/white flag logo.svg" alt="White Flag Project logo" />
 
-            <!-- to enable language switching -->
-            <script>
-            function toggleDropdown() {
-                const dropdowns = document.getElementsByClassName("dropdown-content");
-                for (let dropdown of dropdowns) {
-                    dropdown.classList.toggle("show");
-                }
-            }
-
+    <div class="nav-content">
+      <ul>
+        <li class="vavilon" data-vavilon="nav-help">How can you help?</li>
+        <li><a href="https://discord.gg/ZYbMchDbqU">
+          <img
+          class="translatable-img"
+          src="static/images/join_our_discord/join_our_discord_en.svg"
+          alt="Join our Discord"
+          />
+        </a></li>
+        <li><div class="lang-dropdown">
+          <script>
             window.onclick = function (event) {
                 if (!event.target.parentElement.matches(".lang-dropdownbtn")) {
                     const dropdowns = document.getElementsByClassName("dropdown-content");
@@ -67,124 +89,126 @@
                     }
                 }
             };
+          </script>
+          
+          <button
+          class="lang-dropdownbtn is-hoverable is-clickable"
+          onclick="toggleDropdown()"
+          >
+            <span class="vavilon" data-vavilon="current-language">English</span>
+            <i class="dropdown-arrow"></i>
+          </button>
 
-            function onChangeLanguage(language) {
-                setLang(language);
-
-                // replaces buttons with corresponding language
-                const buttons = document.getElementsByClassName("translatable-img");
-                for (let button of buttons) {
-                    const old_src = button.src;
-                    // this feels very hacky lol feel free to edit
-                    button.src = old_src.slice(0, -6) + language + ".svg";
-                }
-            }
-            </script>
-
-            <div class="lang-dropdown">
-                <button
-                    class="lang-dropdownbtn is-hoverable is-clickable"
-                    onclick="toggleDropdown()"
-                >
-                    <p class="vavilon" data-vavilon="current-language">English</p>
-                    <i class="dropdown-arrow"> </i>
-                </button>
-                <div class="lang-options dropdown-content">
-                    <a onclick="onChangeLanguage('en')">English</a>
-                    <a onclick="onChangeLanguage('ms')">Bahasa Malaysia</a>
-                    <a onclick="onChangeLanguage('zh')">中文</a>
-                    <!-- commented out until tamil translation is available -->
-                    <!-- <a onclick="setLang('ta')">தமிழ்</a> -->
-                </div>
-            </div>
-        </div>
+          <div class="lang-options dropdown-content">
+            <a onclick="onChangeLanguage('en')">English</a>
+            <a onclick="onChangeLanguage('ms')">Bahasa Malaysia</a>
+            <a onclick="onChangeLanguage('zh')">中文</a>
+            <!-- commented out until tamil translation is available -->
+            <!-- <a onclick="setLang('ta')">தமிழ்</a> -->
+          </div>
+        </div></li>
+      </ul>
     </div>
-    <hr />
-
-<div class="main-wrapper">
+  </nav>
+  
+  <!-- main container -->
+  <div class="main-wrapper">
     <!-- aside and section created to split image and text -->
     <div class="aside">
-        <img src="static/images/gambar_rakyat.svg" alt="Header image" class="headerImage" />
+      <img src="static/images/gambar_rakyat.svg" alt="Header image" class="headerImage" />
     </div>
-
-
+    
+      
     <!-- This is for text area, later will display flex for better spacing -->
     <div class="section">
-        <div class="main-content">
-            <div class="text-content">
-            <h1 class="vavilon" data-vavilon="main-about-heading">Who are we?</h1>
+      <div class="main-content">
+        <div class="text-content">
+          <h1 class="vavilon" data-vavilon="main-about-heading">Who are we?</h1>
 
-            <!-- this is a hack to keep the r/malaysia link working when the site switches language -->
-            <div class="about-content">
-              <p class="vavilon" data-vavilon="main-about-content-1">
+          <!-- this is a hack to keep the r/malaysia link working when the site switches language -->
+          <div class="about-content">
+            <p>
+              <span class="vavilon" data-vavilon="main-about-content-1">
                 The White Flag Project is a project by
-              </p>
-              <p><a href="https://www.reddit.com/r/malaysia">r/Malaysia</a></p>
-              <p class="vavilon" data-vavilon="main-about-content-2">
+              </span>
+                <a href="https://www.reddit.com/r/malaysia">r/Malaysia</a>
+              <span class="vavilon" data-vavilon="main-about-content-2">
                 , which aims to provide enriched data and regular updates on food banks
                 and other resources across Malaysia, in order to help developers and
                 NGOs help route people in need to resources which can assist them.
-              </p>
-            </div>
+              </span>
+            </p>
+          </div>
+        </div>
 
-          </div>
-          <div class="text-content">
-            <h1 class="vavilon" data-vavilon="main-data-heading">Data available in the following formats:</h1>
-          </div>
-          <div class="link-to-access is-hoverable">
-            <a href="https://airtable.com/shrW3IGsNO74zjKVr"
-              ><img
-                src="static/images/airtable.svg"
-                alt="Access data (AirTable)"
-            /></a>
-          </div>
-          <div class="link-to-access is-hoverable">
-            <a href="https://whiteflagproject.s3.ap-southeast-1.amazonaws.com/rWhiteFlagProject.json"
-              ><img src="static/images/json.svg" alt="Access data (JSON)"
-            /></a>
-          </div>
+        <div class="text-content">
+          <h1 class="vavilon" data-vavilon="main-data-heading">Data available in the following formats:</h1>
+        </div>
+        <div>
+          <a href="https://airtable.com/shrW3IGsNO74zjKVr">
+            <img class="link-to-access is-hoverable"
+            src="static/images/airtable.svg"
+            alt="Access data (AirTable)"/>
+          </a>
+        </div>
+        <div>
+          <a href="https://whiteflagproject.s3.ap-southeast-1.amazonaws.com/rWhiteFlagProject.json">
+            <img class="link-to-access is-hoverable" src="static/images/json.svg" alt="Access data (JSON)"/>
+          </a>
         </div>
 
         <div class="anchor-content">
-            <p class="vavilon" data-vavilon="anchor-heading">Our data is currently being used in these apps</p>
-            <ul>
-                <li class="is-hoverable"><a href="https://www.sambalsos.com"><img src="static/images/data_consumers_logo/Sambal SOS.svg" alt="sambal SOS link"></a></li>
-                <li class="is-hoverable"><a href="https://foodbank-my.com"><img src="static/images/data_consumers_logo/foodbank-my.png" alt="foodbank-MY link"></a></li>
-                <li class="is-hoverable"><a href="https://www.kitaboleh.my"><img src="static/images/data_consumers_logo/kitaboleh.png"></a></li>
-                <li class="is-hoverable"><a href="https://www.feedselangor.com/"><img src="static/images/data_consumers_logo/feedselangor.png"></a></li>
-                <li><img class="translatable-img" src="static/images/more_to_come/more_to_come_en.svg"></a></li>
-            </ul>
-
+          <p class="vavilon" data-vavilon="anchor-heading">Our data is currently being used in these apps</p>
+          <ul>
+            <li><a href="https://www.sambalsos.com" title="sambal SOS link">
+              <img class="is-hoverable" src="static/images/data_consumers_logo/Sambal SOS.svg" alt="sambal SOS logo">
+            </a></li>
+            <li><a href="https://foodbank-my.com" title="foodbank-MY link">
+              <img class="is-hoverable" src="static/images/data_consumers_logo/foodbank-my.png" alt="foodbank-MY logo">
+            </a></li>
+            <li><a href="https://www.kitaboleh.my" title="Kita Boleh link">
+              <img class="is-hoverable" src="static/images/data_consumers_logo/kitaboleh.png" alt="Kita Boleh logo">
+            </a></li>
+            <li><a href="https://www.feedselangor.com/" title="Feed Selangor link">
+              <img class="is-hoverable" src="static/images/data_consumers_logo/feedselangor.png" alt="Feed Selangor logo">
+            </a></li>
+            <li>
+              <img class="translatable-img" src="static/images/more_to_come/more_to_come_en.svg" alt="More to come">
+            </a></li>
+          </ul>
         </div>
 
+        <!-- to enable language switching -->
+
         <div class="mobile_discord">
-            <a href="https://discord.gg/ZYbMchDbqU"><img class="translatable-img" src="static/images/join_our_discord/join_our_discord_en.svg" alt="Join our Discord" /></a>
-            <div class="lang-dropdown">
-                <button
-                    class="lang-dropdownbtn is-hoverable is-clickable"
-                    onclick="toggleDropdown()"
-                >
-                    <p class="vavilon" data-vavilon="current-language">English</p>
-                    <i class="dropdown-arrow"> </i>
-                </button>
-                <div class="lang-options dropdown-content">
-                    <a onclick="onChangeLanguage('en')">English</a>
-                    <a onclick="onChangeLanguage('ms')">Bahasa Malaysia</a>
-                    <a onclick="onChangeLanguage('zh')">中文</a>
-                    <!-- commented out until tamil translation is available -->
-                    <!-- <a onclick="setLang('ta')">தமிழ்</a> -->
-                </div>
+          <a href="https://discord.gg/ZYbMchDbqU"><img class="translatable-img" src="static/images/join_our_discord/join_our_discord_en.svg" alt="Join our Discord" /></a>
+          <div class="lang-dropdown">
+            <button
+              class="lang-dropdownbtn is-hoverable is-clickable"
+              onclick="toggleDropdown()"
+            >
+              <p class="vavilon" data-vavilon="current-language">English</p>
+              <i class="dropdown-arrow"></i>
+            </button>
+            <div class="lang-options dropdown-content">
+              <a onclick="onChangeLanguage('en')">English</a>
+              <a onclick="onChangeLanguage('ms')">Bahasa Malaysia</a>
+              <a onclick="onChangeLanguage('zh')">中文</a>
+              <!-- commented out until tamil translation is available -->
+              <!-- <a onclick="setLang('ta')">தமிழ்</a> -->
             </div>
+          </div>
         </div>
 
         <div class="ccAttribution">
-            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
-            <br />
-            <p class="license">This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+          <br />
+          <p class="license">This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
         </div>
 
-        </div>
-</div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
