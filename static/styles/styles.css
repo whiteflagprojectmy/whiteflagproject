@@ -1,9 +1,15 @@
-*{
+* {
     padding: 0;
     box-sizing: border-box;
-    margin: 0 10px;
+    margin: 0;
     font-family: 'Signika', sans-serif;
     background: #FFFFFF;
+}
+
+/* For high res screen, limit to 1920px */
+body {
+    max-width: 1920px;
+    margin: 0px auto;
 }
 
 .is-clickable {
@@ -15,26 +21,38 @@
 }
 
 /*header */
-.nav-menu {
+.top-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 10px;
 }
 
 /*changing text style with discord link */
-.nav-content{
-    display: flex;
+.nav-content {
+    display: block;
     align-items: center;
+    margin: 5px 25px;
 }
 
-/*sizing image to bottom */
-.image-logo img{
-    position: relative;
-    top:50px;
+/* Do not display bullet for nav bar list */
+.nav-content > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
-.nav-content p{
+
+.nav-content li {
+    float: left;
+    margin: 0 10px;
     font-weight: 300;
     font-size: 30px;
+}
+
+.image-logo {
+    margin: 0 30px;
+    position: relative;
+    top:50px;
 }
 
 /*dropdown to switch language */
@@ -44,7 +62,7 @@
   padding: 0px 5px;
 }
 
-.lang-dropdownbtn p {
+.lang-dropdownbtn {
   display: inline-block;
   font-size: 16px;
 }
@@ -54,7 +72,7 @@
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 4px;
-  margin: 0px;
+  margin: 0px 5px;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
@@ -65,12 +83,13 @@
   margin-top: 10px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  right: 50px;
+  padding: 5px 0;
+  margin: 0 20px 0 0; /* Margin on right*/
 }
 
 .lang-options a {
   display: block;
-  padding: 5px 2px;
+  padding: 5px 10px;
   cursor: pointer;
   text-align: right;
   font-size: 16px;
@@ -82,24 +101,40 @@
   display: block;
 }
 
-/*moving hr up and to the left */
-hr{
-    position: relative;
-    bottom:20px;
-    width: 70%;
-    margin-left: auto;
+.aside {
+    padding: 50px 0 10px 0; /* Move aside away from logo */
+    width: 30vw;
+    max-width: 550px; /* Size of img in aside */
+    min-width: 300px;
 }
 
 .main-wrapper{
-    padding-top: 50px;
-    display:flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding: 0 25px;
 }
 
 /*styling to edit text */
 h1 {
     font-weight: bold;
     font-size: 35px;
-    margin: 15px 9px; /* add some white space between title and others */
+    margin: 15px 0; /* add some white space between title and others */
+}
+
+.headerImage {
+    width: inherit; /* Inherit from aside div */
+    max-width: inherit;
+    min-width: inherit;
+}
+
+.section {
+    min-width: 700px;
+    width: 65vw;
+    max-width: 1300px;
+    padding: 15px 25px 0;
+    border-top: thin solid black;
 }
 
 .text-content p {
@@ -149,10 +184,6 @@ font-size: 24px;
     margin-left: 12px; /* align with button links */
 }
 
-.section {
-    margin-top: -35px; /* shrink top spacing for desktop */
-}
-
 .link-to-access {
     margin: 0 /* align button to titles */
 }
@@ -164,8 +195,8 @@ font-size: 24px;
 
 /* mobile specific CSS */
 @media (max-width: 768px) {
-    *{
-        margin: 0 5px
+    * {
+        margin: 0 0
     }
 
     hr {
@@ -194,10 +225,13 @@ font-size: 24px;
         display: flex;
         max-width: 768px;
         flex-direction: column;
-        align-items: center
+        align-items: center;
+
+        /* Remove stuff from desktop version */
+        padding: initial;
     }
     /*header */
-    .nav-menu {
+    .top-nav {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -211,19 +245,29 @@ font-size: 24px;
     /* Is there a better way to do this? */
     .headerImage {
         max-width: 325px;
-        padding: 0 20px;
+        padding: 0 0 0 25px; /* Offset image to right */
+        margin: 0;
         background: transparent; /* don't block image-logo */
+        width: initial;
+        min-width: initial;
     }
 
     .aside {
-        margin-top: -50px; /* make aside appear beside image-logo */
-        margin-left: 60px;
         z-index: 9; /* don't get hidden behind image-logo */
         background: transparent; /* don't block image-logo */
+        padding: 5px 0 0 15px; /* make aside appear beside image-logo */
+        width: initial;
+        max-width: initial;
+        min-width: initial;
     }
 
     .section {
         margin-top: 42px; /* add some white space to top of section */
+        border: unset;
+        min-width: initial;
+        max-width: initial;
+        width: initial; 
+        padding: 0 25px 0;
     }
 
     /* adjust text size for mobile */

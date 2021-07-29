@@ -5,17 +5,6 @@ function toggleDropdown() {
     }
 }
 
-window.onclick = function (event) {
-    if (!event.target.parentElement.matches(".lang-dropdownbtn")) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let dropdown of dropdowns) {
-            if (dropdown.classList.contains("show")) {
-                dropdown.classList.remove("show");
-            }
-        }
-    }
-};
-
 function onChangeLanguage(language) {
     setLang(language);
 
