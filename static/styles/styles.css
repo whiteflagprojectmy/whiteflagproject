@@ -181,7 +181,7 @@ font-size: 24px;
 }
 
 .ccAttribution {
-    margin-left: 12px; /* align with button links */
+    font-style: italic;
 }
 
 .link-to-access {
@@ -190,8 +190,15 @@ font-size: 24px;
 
 .ccAttribution {
     margin-top: 2%;
-    text-align: center;
+    text-align: left;
+    display: flex;
+    align-items: center;
 }
+
+.ccAttributionText {
+    margin-left: 10px;
+}
+
 
 /* mobile specific CSS */
 @media (max-width: 768px) {
@@ -299,6 +306,11 @@ font-size: 24px;
         margin-top: 5px; /* slight top spacing for CC image */
         margin-left: 0;
     }
+
+    .ccAttributionText {
+        font-size: 9pt;
+    }
+
 
     .anchor-content ul {
         padding-top: 10px;
