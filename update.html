@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>White Flag Project</title>
+    <meta name="description" content="This is the homepage for The White Flag Project, which aims to
+      provide enriched data and regular updates on food banks and other resources
+      across Malaysia.">
+
+    <link rel="icon" href="favicon.ico">
+
+    <!--Open Graph metadata-->
+    <meta property="og:title" content="Homepage - White Flag Project">
+    <meta property="og:description" content="This is the homepage for The White Flag Project, which aims to
+      provide enriched data and regular updates on food banks and other resources
+      across Malaysia.">
+    <meta property="og:image" content="static/images/white flag logo.svg">
+    <meta property="og:type" content="website">
+    <script>
+        const id = new URLSearchParams(window.location.search).get('id')
+
+        const fetchData = async (url, params = {}) => {
+            const urlobj = new URL(url)
+            urlobj.search = new URLSearchParams(params).toString()
+            const response = await fetch(urlobj)
+            const result = await response.json()
+            return result
+        }
+
+        const replaceLink = (response = null) => {
+            if (response?.data?.UpdateForms) {
+                link = response?.data?.UpdateForms
+                const el = document.getElementById('embed-container')
+                el.setAttribute('data', link)
+            }
+        }
+
+        if (id) {
+            let datasource = null
+            fetchData(`https://y9g3chd0rj.execute-api.ap-southeast-1.amazonaws.com/production/query/${id}`)
+                .then(data => replaceLink(data))
+                .catch(e => {
+                    alert(e.message)
+                    window.location.replace('/')
+                })
+        } else {
+            window.location.replace('/')
+        }
+    </script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 100%; height: 100vh; overflow-y: clip;">
+        <object style="width: 100%; height: 100%;" id="embed-container"></object>
+    </div>
+</body>
